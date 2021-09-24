@@ -1,4 +1,5 @@
 The classic iris classification proejct. 
+The data is taken from Sci-Kit Learn
 
 Important Notes:
 * Sci-Kit Learn for the modeling.
