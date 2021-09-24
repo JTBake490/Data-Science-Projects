@@ -1,3 +1,4 @@
+import sys
 from multiprocessing import cpu_count
 
 import numpy as np
@@ -40,8 +41,7 @@ def train_model(algo, X_train, y_train, X_test=None, y_test=None):
 
 
 if __name__ == '__main__':
-    train = '/Volumes/Backup Plus/ML Datasets/shuttle/shuttle_train.csv'
-    test = '/Volumes/Backup Plus/ML Datasets/shuttle/shuttle_test.csv'
+    train, test = sys.argv[1], sys.argv[2]
     
     random_state = 1000
     sep = ' '
