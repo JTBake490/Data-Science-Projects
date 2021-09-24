@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shuttle Class Prediction</title>
+</head>
+
+<body>
+	<h1>Predict Shuttle Class</h1>
+
+    <form action="{{ url_for('predict') }}" method="post">
+      <input type="number" name=0 placeholder="Feature 0" required="required"/>
+      <input type="number" name=1 placeholder="Feature 1" required="required"/>
+      <input type="number" name=2 placeholder="Feature 2" required="required"/>
+      <br>
+      <input type="number" name=3 placeholder="Feature 3" required="required"/>
+      <input type="number" name=4 placeholder="Feature 4" required="required"/>
+      <input type="number" name=5 placeholder="Feature 5" required="required"/>
+      <br>
+      <input type="number" name=6 placeholder="Feature 6" required="required"/>
+      <input type="number" name=7 placeholder="Feature 7" required="required"/>
+      <input type="number" name=8 placeholder="Feature 8" required="required"/>
+      <br><br>
+      <button type="submit">Predict</button>
+    </form>
+
+   <br>
+   <h3>{{ prediction_text }}</h3>
+   <br><br>
+   {{ class1 }}<br>{{ class2 }}<br>{{ class3 }}<br>{{ class4 }}<br>{{ class5 }}<br>{{ class6 }}<br>{{ class7 }}
+</body>
+
+</html>
