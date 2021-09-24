@@ -1,6 +1,6 @@
 # Notes For Shuttle Classification
 
-* Data came separated into two files:
+* Data came separated into two files from the UCI Machine Lerning Repository:
     - shuttle_train
     - shuttle_test
 
