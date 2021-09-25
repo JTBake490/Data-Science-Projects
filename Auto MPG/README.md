@@ -1,5 +1,8 @@
 # Notes For Auto MPG Regression
 
+## Source
+* The data was obtained from the UCI Machine Learning Repository
+
 ## Features
 * Used a Seaborn pairplot to determine any obvious correlations
 * Settled on the following columns based on the pairplot
