@@ -24,7 +24,7 @@
 
 ## Model Chosen
 * Both the extra trees and random forest provided leave one out cross validated scores close to 98%. Extra Trees was chosen for the model.
-    - Note: While both models only misclassified four datapoints, the miclassified datapoints were not the same.
+    - Note: While both models only misclassified four datapoints, the misclassified datapoints were not the same.
 
 ## Deployment
 * Tkinter GUI application
