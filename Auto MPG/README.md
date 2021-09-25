@@ -18,5 +18,9 @@
 * Missing values
     - Filled in missing values with an iterative imputer; values based on the features chosen for regression predictions
 
+## Best Model
+* The best model was a Multilayer Perceptron
+* An Adjusted R2 score of 0.75 with ten fold cross-validation
+
 ## Deployment
 * Tkinter GUI application
