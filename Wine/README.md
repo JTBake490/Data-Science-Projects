@@ -19,7 +19,7 @@
 
 ## Preprocessing
 * Scaling For The K Nearest Neighbors Classifier
-    - Most features use measurements which fall between 0 and five units. The three exceptions were alcohol, color_intensity, and proline.
+    - Most features use measurements which fall between zero and five units. The three exceptions were alcohol, color_intensity, and proline.
     - The standard scaler was used on the three mentioned features
 
 ## Model Chosen
