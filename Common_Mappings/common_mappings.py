@@ -32,11 +32,11 @@ def abbrev_country(country, abbrev='ISO2', country_map=country_codes.countries):
     Converts a given country to an abbreviated form
     abbrev : {'ISO2', 'ISO3', 'UN_CODE'}, default='ISO2'
     '''
-    if abbrev.upper() not in ('ISO2', 'ISO3', 'UN_CODE'):
-        raise ValueError('abbrev must be ISO2, ISO3, or UN_CODE')
-
     country = country.upper()
     abbrev = abbrev.upper()
+
+    if abbrev.upper() not in ('ISO2', 'ISO3', 'UN_CODE'):
+        raise ValueError('abbrev must be ISO2, ISO3, or UN_CODE')
     if abbrev == 'ISO2':
         return country_map[country].ISO2
     elif abbrev == 'ISO3':
