@@ -9,10 +9,12 @@ with open('Mappings/directions.json', 'r') as direct_file:
     direct_map = json.load(direct_file)
 
 def remove_accents(word, accents_map=no_accents):
+    '''Remove all accents from a character within a string if there is an ascii equivalent'''
     table = str.maketrans(accents_map)
     return word.translate(table)
 
 def abbrev_directions(direction, direction_map=direct_map):
+    '''Replace directions with a common abbreviated form'''
     result = []
     direction_map = {key.upper() : value for key, value in direction_map.items()}
 
@@ -27,7 +29,7 @@ def abbrev_directions(direction, direction_map=direct_map):
 
 def abbrev_country(country, abbrev='ISO2', country_map=country_codes.countries):
     '''
-    Converts a given country to an abbreviated form.
+    Converts a given country to an abbreviated form
     abbrev : {'ISO2', 'ISO3', 'UN_CODE'}, default='ISO2'
     '''
     if abbrev.upper() not in ('ISO2', 'ISO3', 'UN_CODE'):
