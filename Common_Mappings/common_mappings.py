@@ -1,10 +1,11 @@
 import json
-import country_codes
+import pathlib
+import Mappings.country_codes as country_codes
 
-with open('accents.json', 'r') as accent_file:
+with open('Mappings/accents.json', 'r') as accent_file:
     no_accents = json.load(accent_file)
 
-with open('directions.json', 'r') as direct_file:
+with open('Mappings/directions.json', 'r') as direct_file:
     direct_map = json.load(direct_file)
 
 def remove_accents(word, accents_map=no_accents):
