@@ -1,7 +1,7 @@
 import numpy as np
 import warnings
 from sklearn.datasets import load_breast_cancer
-from sklearn.model_selection import StratifiedKFold, cross_validate, GridSearchCV
+from sklearn.model_selection import StratifiedKFold, GridSearchCV
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import make_scorer, accuracy_score, f1_score, roc_auc_score
