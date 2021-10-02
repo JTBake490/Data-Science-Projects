@@ -1,7 +1,7 @@
 # Notes For Zoo Type Classification
 
 ## Features
-* All but one of the features is binary
+* All but one of the features are binary
 * None of the features were removed for modeling
 
 ## Models Tested During SKLearn Modeling
