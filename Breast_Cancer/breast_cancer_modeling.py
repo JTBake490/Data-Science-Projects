@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import make_scorer, accuracy_score, f1_score, roc_auc_score
 from sklearn.linear_model import LogisticRegression
 
-warnings.filterwarnings('ignore')
+warnings.filterwarnings('ignore', category=UserWarning)
 
 RANDOM_STATE = 10
 
@@ -37,7 +37,7 @@ grid.fit(X, y)
 if __name__ == '__main__':
     ROUNDING = 4
 
-    top_cv_idx = list(grid.cv_results_['rank_test_roc_auc']).index(1)
+    top_cv_idx = grid.best_index_
     corresponding_accuracy = grid.cv_results_['mean_test_accuracy'][top_cv_idx]
     corresponding_f1 = grid.cv_results_['mean_test_f1'][top_cv_idx]
     
