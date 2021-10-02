@@ -36,24 +36,6 @@ class ZooApplication(tk.Frame):
         self.quit = tk.Button(self, text='QUIT', fg='red', command=self.root.destroy)
         self.quit.pack(side='bottom')
 
-    def predict_class(self):
-        features = [np.float64(entry.get()) for entry in self.entries.values()]
-        features_array = np.array(features).reshape(1, -1)
-        prediction_num = self.model.predict(features_array)
-        prediction_label = prediction_num[0]
-        probabilities = [f'{idx+1}: ' + str(perc*100) + '%' for idx, perc in enumerate(self.model.predict_proba(features_array)[0])]
-
-        self.prediction_label_title = tk.Label(self, text=f'\nZoo Type Prediction: {prediction_label}\n')
-        self.prediction_label_title.pack()
-
-        for probability in probabilities:
-            self.class_labels.append(tk.Label(self, text=f'Type {probability}'))
-
-        for class_label in self.class_labels:
-            class_label.pack()
-
-        self.predict_button['state'] = tk.DISABLED
-
     def predict_pop(self):
         self.class_labels.clear()
 
