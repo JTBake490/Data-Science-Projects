@@ -18,6 +18,11 @@
 * Imputer
     - While there was not any missing data in this dataset, an imputer was added to the column transformer incase a feature is not provided in an application
 
+## Class Imbalance
+* The Seaborn Count Plot shows there is class imbalance
+    - There are more values of type one than the other types
+* A random oversampler was used to oversample the non-majority types
+
 ## Model Chosen
 * K Nearest Neighbors
     - Ran a gird search optimizing the weights and n_neighbors
