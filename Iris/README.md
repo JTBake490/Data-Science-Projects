@@ -1,8 +1,19 @@
-The classic iris classification proejct. 
-The data is taken from Sci-Kit Learn
+# Notes For The classic Iris Classification Proejct. 
 
-Important Notes:
-* Sci-Kit Learn for the modeling.
-  * Over 97% accuracy with leave one out cross validation
+## Source
+* The data for this project comes from within Scikit Learn datasets
+
+## Environment
+* All packages and dependencies are located in requirements.yml
+* Run the following command to create an environment
+```
+conda env create --file requirements.yml
+```
+
+## Estimator Chosen:
+* Gaussian Naive Bayes
+ * Over 97% accuracy with leave one out cross validation
 * Model is a stored as a joblib file
+
+## Deployment
 * Deployed as a TKinter gui application
