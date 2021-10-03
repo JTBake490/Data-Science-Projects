@@ -1,5 +1,12 @@
 # Notes For Breast Cancer Classification
 
+## Environment
+* All packages and dependencies are located in requirements.yml
+* Run the following command to create an environment
+```
+conda env create --file requirements.yml
+```
+
 ## Features
 * The Seaborn countplot is to help show the number of malignant cases vs benign cases
     - While 62.7% of the cases were benign, I determined it was not a significant amount to warrent oversampling or undersampling
