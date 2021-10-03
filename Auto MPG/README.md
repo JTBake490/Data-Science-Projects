@@ -3,6 +3,13 @@
 ## Source
 * The data was obtained from the UCI Machine Learning Repository
 
+## Environment
+* All packages and dependencies are located in requirements.yml
+* Run the following command to create an environment
+```
+conda env create --file requirements.yml
+```
+
 ## Objective
 * Create a model that can determine the MPG of a vehicle given certain parameters
 
