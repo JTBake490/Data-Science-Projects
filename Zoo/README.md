@@ -1,5 +1,15 @@
 # Notes For Zoo Type Classification
 
+## Source
+* The data for this project came from the UCI Machine Learning Repository
+
+## Environment
+* All packages and dependencies are located in requirements.yml
+* Run the following command to create an environment
+```
+conda env create --file requirements.yml
+```
+
 ## Features
 * All but one of the features are binary
 * None of the features were removed for modeling
