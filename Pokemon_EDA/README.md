@@ -1,14 +1,14 @@
 # Notes Regrading Pokemon EDA
 
+## Objective
+* Perform a basic EDA using as much of the Python Standard Library as possible
+
 ## Environment
 * All packages and dependencies are located in requirements.yml
 * Run the following command to create an environment
 ```
 conda env create --file requirements.yml
 ```
-
-## Objective
-* Perform a basic EDA using as much of the Python Standard Library as possible
 
 ## Web Scraping
 * The data was webscraped from pokemondb.net/pokedex/all on December 2020
