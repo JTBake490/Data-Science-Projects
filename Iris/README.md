@@ -16,4 +16,5 @@ conda env create --file requirements.yml
 * Model is a stored as a joblib file
 
 ## Deployment
-* Deployed as a TKinter gui application
+* TKinter gui application
+* Streamlit web application
