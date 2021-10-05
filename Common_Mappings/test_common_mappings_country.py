@@ -36,7 +36,7 @@ class AbbrevCountry(unittest.TestCase):
     def test_bad_abbrev(self):
         country = 'JAMAICA'
         abbrev = 'ISO4'
-        self.assertRaises(ValueError, abbrev_country, country, abbrev)
+        self.assertRaises(AssertionError, abbrev_country, country, abbrev)
 
 if __name__ == '__main__':
     unittest.main()
