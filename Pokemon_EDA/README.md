@@ -3,16 +3,16 @@
 ## Objective
 * Perform a basic EDA using as much of the Python Standard Library as possible
 
+## Source Web Scraping
+* The data was webscraped from **www.pokemondb.net/pokedex/all** on December 2020
+    - Since the Pokemon video games are continuing to be made, the database may continue to expand. The techniques used to scrape the data should continute to work provided the HTML structure of the website remain contant
+
 ## Environment
 * All packages and dependencies are located in requirements.yml
 * Run the following command to create an environment
 ```
 conda env create --file requirements.yml
 ```
-
-## Web Scraping
-* The data was webscraped from pokemondb.net/pokedex/all on December 2020
-* Since the Pokemon video games are continuing to be made, the database may continue to expand. The techniques used to scrape the data should continute to work provided the HTML structure of the website remain contant
 
 ## Database
 * SQLite
