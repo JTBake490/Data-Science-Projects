@@ -29,14 +29,20 @@ class AbbrevCountry(unittest.TestCase):
 
     def test_get_uncode(self):
         country = 'Brazil'
-        country_short = abbrev_country(country)
+        country_short = abbrev_country(country, abbrev='UN_CODE')
         expected = '076'
-        self.assertTrue(country_short, expected)
+        self.assertEqual(country_short, expected)
 
     def test_bad_abbrev(self):
         country = 'JAMAICA'
         abbrev = 'ISO4'
         self.assertRaises(AssertionError, abbrev_country, country, abbrev)
+
+    def test_country_not_in_mapping_returs_itself(self):
+        country = 'Gotham'
+        country_short = abbrev_country(country)
+        self.assertEqual(country, country_short)
+
 
 if __name__ == '__main__':
     unittest.main()
