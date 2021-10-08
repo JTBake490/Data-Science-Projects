@@ -2,6 +2,8 @@
 
 ## Source
 * The data was obtained from the UCI Machine Learning Repository
+* Auto MPG Page: https://archive.ics.uci.edu/ml/datasets/auto+mpg
+* Auto MPG Download Page: https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/
 
 ## Environment
 * All packages and dependencies are located in requirements.yml
