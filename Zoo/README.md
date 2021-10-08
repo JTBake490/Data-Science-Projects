@@ -2,6 +2,8 @@
 
 ## Source
 * The data for this project came from the UCI Machine Learning Repository
+* Zoo Page: https://archive.ics.uci.edu/ml/datasets/zoo
+* Zoo Download Page: https://archive.ics.uci.edu/ml/machine-learning-databases/zoo/
 
 ## Environment
 * All packages and dependencies are located in requirements.yml
