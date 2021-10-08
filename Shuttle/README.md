@@ -4,6 +4,8 @@
 * Data came separated into two files from the UCI Machine Lerning Repository:
     - shuttle_train
     - shuttle_test
+* Shuttle Page: https://archive.ics.uci.edu/ml/datasets/Statlog+(Shuttle)
+* Shuttle Download Page: https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/shuttle/
 
 ## Environment
 * All packages and dependencies are located in requirements.yml
