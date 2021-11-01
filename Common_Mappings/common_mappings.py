@@ -1,6 +1,6 @@
 import json
 from string import punctuation
-from Mappings import country_codes
+from Mappings import country_codes, roman_numerals
 
 with open('Mappings/accents.json', 'r') as accent_file:
     no_accents_map = json.load(accent_file)
@@ -30,7 +30,6 @@ def abbrev_directions(direction, direction_map=direct_map):
             result.append(direction_map[upper_word])
         else:
             result.append(word)
-    
     return ' '.join(result)
 
 def abbrev_country(country, abbrev='ISO2', country_map=country_codes.countries):
@@ -52,3 +51,19 @@ def abbrev_country(country, abbrev='ISO2', country_map=country_codes.countries):
             return country_map[country_up].UN_CODE
     except KeyError:
         return country
+
+def convert_to_roman(number: int) -> str:
+    '''
+    Convert an integer to Roman Numerals.
+    Number range is accurate from 1 to 3000 inclusive.
+    '''
+    assert (number >= 1) & (number <= 3_000), 'convert_to_roman is only for 1 to 3_000 inclusive'
+    complete = ''
+    
+    for field in roman_numerals.Symbols._fields:
+        numeral = eval(f'roman_numerals.numerals.{field}')
+        num = eval(f'roman_numerals.numbers.{field}')
+        while number >= num:
+            complete += numeral
+            number -= num
+    return complete
