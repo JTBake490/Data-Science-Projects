@@ -1,4 +1,5 @@
 import json
+from collections import deque
 from string import punctuation
 from Mappings import country_codes, roman_numerals
 
@@ -11,6 +12,11 @@ with open('Mappings/directions.json', 'r') as direct_file:
     direct_map = json.load(direct_file)
     direct_map = {key.upper() : value for key, value in direct_map.items()}
 
+with open('Mappings/num_to_words.json', 'r') as num_words_file:
+    num_to_words_map = json.load(num_words_file)
+    __zero_to_nineteen = {int(key) : value for key, value in num_to_words_map['zero_to_nineteen'].items()}
+    __tens = {int(key): value for key, value in num_to_words_map['tens'].items()}
+
 def remove_accents(word, accents_table=accent_table):
     '''Remove all accents from a character within a string if there is an ascii equivalent'''
     return word.translate(accents_table)
@@ -20,7 +26,7 @@ def remove_punctuation(text, punctuation=punctuation, sep=''):
     no_punctuation = str.maketrans(dict.fromkeys(punctuation, sep))
     return text.translate(no_punctuation).strip()
 
-def abbrev_directions(direction, direction_map=direct_map):
+def abbrev_directions(direction, direction_map=direct_map, sep=' '):
     '''Replace directions with a common abbreviated form'''
     result = []
 
@@ -30,7 +36,7 @@ def abbrev_directions(direction, direction_map=direct_map):
             result.append(direction_map[upper_word])
         else:
             result.append(word)
-    return ' '.join(result)
+    return sep.join(result)
 
 def abbrev_country(country, abbrev='ISO2', country_map=country_codes.countries):
     '''
@@ -67,3 +73,38 @@ def convert_to_roman(number: int) -> str:
             complete += numeral
             number -= num
     return complete
+
+def num_to_words(num, num_to_words_map=num_to_words_map, sep='-'):
+    '''
+    Return the word form of an integer.
+    Numbers must be between 0 inclusive 
+    and 1_000_000_000_000_000 (one-quadrillion) exclusive.
+    '''
+    assert (num >= 0) & (num < 1_000_000_000_000_000), 'number must be between 0 inclusive and one-quadrillion exclusive'
+
+    if num == 0:
+        return 'zero'
+    elif num <= 19:
+        return __zero_to_nineteen[num]
+    elif num < 100:
+        qtnt, rmdr = divmod(num, 10)
+        return sep.join((__tens[qtnt], __zero_to_nineteen[rmdr])) if rmdr != 0 else __tens[qtnt]
+    elif num < 1_000:
+        qtnt, rmdr = divmod(num, 100)
+        if rmdr != 0:
+            return sep.join((__zero_to_nineteen[qtnt], 'hundred', num_to_words(rmdr))).strip(sep)
+        else:
+            return sep.join((__zero_to_nineteen[qtnt], 'hundred')).strip(sep)
+    else:
+        full = deque()
+        places = iter(('', 'thousand', 'million', 'billion', 'trillion'))
+        while num >= 1000:
+            num, rmdr = divmod(num, 1000)
+            place = next(places)
+            if rmdr != 0:
+                rmdr_words = num_to_words(rmdr)
+                full.appendleft(place)
+                full.appendleft(rmdr_words)
+        full.appendleft(next(places))
+        full.appendleft(num_to_words(num))
+        return sep.join(full).strip(sep)
