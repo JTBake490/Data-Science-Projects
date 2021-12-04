@@ -137,4 +137,3 @@ dependencies:
     - validators==0.18.2
     - webencodings==0.5.1
     - widgetsnbextension==3.5.2
-prefix: /usr/local/Caskroom/miniconda/base/envs/pokemon
