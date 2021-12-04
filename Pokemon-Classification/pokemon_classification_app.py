@@ -1,5 +1,4 @@
 import streamlit as st
-from pokemon_classification_modeling import is_legend_rules_based
 
 def is_legend_rules_based(egg_type_1, growth_rate, catch_rate, egg_cycles, is_genderless):
     legend_egg_types = {'undiscovered', 'fairy'}
