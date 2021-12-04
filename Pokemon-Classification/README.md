@@ -28,6 +28,9 @@ Several columns had many missing values. The way the missing values were handled
 
 * Percentage Male had missing values because some pokemon are genderless. Instead of using percentage male and percetage female, I created a is_genderless features instead.
 
+## Preprocessing Not Taken
+The dataset not only lists every pokemon, but also contains alternate forms of the pokemon as separate pokemon. It was decided to not drop alternate forms since this might affect whether the stat features are a good indicator of a legendary.
+
 ## Model Used
 Rules based classification using the following features:
 * Egg Type 1 (Primary Type)
@@ -35,6 +38,27 @@ Rules based classification using the following features:
 * Growth Rate
 * Catch Rate
 * Is Genderless
+
+## Metrics
+* A dummy classifier simply predicted _legendary_ if the pokemon's Egg Type 1 is undiscovered. The dummy classifier dummy metrics are as follows:
+    - Accuracy:     97.22%
+    - Precision:    82.24%
+    - Recall:       98.43%
+    - F1:           89.61%
+    - Roc Auc:      97.74% 
+    - 29 Pokemon incorrectly classified:
+        * 27 False Positives
+        * 2 False Negatives
+
+* Rules based classifier used a combination of the features listed above. The rules based classifier metrics are as follows:
+    - Accuracy:     99.52%
+    - Precision:    96.92%
+    - Recall:       99.21%
+    - F1:           98.05%
+    - Roc Auc:      99.39% 
+    - 5 pokemon incorrectly classified:
+        * 4 False Positives
+        * 1 False Negative
 
 ## Deployment
 * Streamlit web application
